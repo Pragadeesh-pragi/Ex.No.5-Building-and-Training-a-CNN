@@ -89,7 +89,69 @@ plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
 plt.show()
+## WORKING PRINCIPLE 
+A Convolutional Neural Network (CNN) works by automatically extracting important features from images and classifying them into different categories.
 
+Input Image: The CIFAR-10 images of size 32 × 32 × 3 are given as input.
+Convolution Layer: Extracts features such as edges, shapes, and patterns from the images.
+Pooling Layer: Reduces the size of the feature maps while retaining important information.
+Flattening: Converts the extracted feature maps into a one-dimensional vector.
+Dense Layer: Learns the relationships between the extracted features.
+Output Layer: Uses Softmax to classify the image into one of the 10 CIFAR-10 classes.
+Training: The model adjusts its weights using the Adam optimizer to reduce the classification error.
+Prediction: The trained CNN predicts the class of new images.
+# BLOCK DIAGRAM 
+        ┌───────────────────────────┐
+        │      CIFAR-10 DATASET     │
+        │   50,000 Training Images  │
+        │   10,000 Test Images      │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │      PREPROCESSING        │
+        │  Normalize Pixel Values   │
+        │    One-Hot Encoding       │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │      INPUT IMAGE          │
+        │       32 × 32 × 3         │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │    CONVOLUTION LAYER      │
+        │     Feature Extraction    │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │      MAX POOLING          │
+        │    Size Reduction         │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │    CONVOLUTION + POOLING  │
+        │    Feature Extraction     │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │         FLATTEN           │
+        │  Convert to 1D Vector     │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │       DENSE LAYER         │
+        │     Feature Learning      │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │      SOFTMAX OUTPUT       │
+        │       10 Classes          │
+        └─────────────┬─────────────┘
+                      ↓
+        ┌───────────────────────────┐
+        │    PREDICTED CLASS        │
+        │ Airplane / Car / Bird ... │
+        └───────────────────────────┘
 ## Model Accuracy Graph:
 •	The training accuracy increases steadily with each epoch, showing that the model is learning patterns from the data.
 •	Validation accuracy also improves but starts to level off after some epochs.
@@ -124,13 +186,5 @@ for i in range(5):
     <img width="554" height="284" alt="image" src="https://github.com/user-attachments/assets/be9212f4-4e6e-4f71-b3f8-43a953665c83" />
    ##  Conclusion:
 Thus successfully implemented and trained a CNN to recognize objects across ten distinct categories using the CIFAR 10 dataset.
-
-
-
-
-
-
-
-
-
-
+## RESULT 
+The Convolutional Neural Network (CNN) model was successfully built and trained using the CIFAR-10 dataset. The model effectively learned image features through convolution and pooling layers and classified images into 10 different classes. The model performance was evaluated using test accuracy.
